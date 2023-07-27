@@ -7,7 +7,7 @@ public class HashSetCreator {
     public HashSet<Integer> createHashSet(List<Integer> sourceList) {
         HashSet<Integer> set = new HashSet<>();
 
-        for(Integer current : sourceList) {
+        for (Integer current : sourceList) {
             if (current % 2 == 0) {
                 int i = current;
                 for (; i % 2 == 0; i /= 2) {
@@ -16,7 +16,7 @@ public class HashSetCreator {
                 set.add(i);
             } else {
                 set.add(current);
-                set.add(current*2);
+                set.add(current * 2);
             }
         }
 
