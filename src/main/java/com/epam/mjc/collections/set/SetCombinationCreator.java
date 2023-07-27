@@ -5,6 +5,16 @@ import java.util.Set;
 
 public class SetCombinationCreator {
     public Set<String> createSetCombination(Set<String> firstSet, Set<String> secondSet, Set<String> thirdSet) {
-        return new HashSet<>();
+        HashSet<String> intersection = new HashSet<>(firstSet);
+        intersection.retainAll(secondSet);
+        intersection.removeAll(thirdSet);
+
+        HashSet<String> set = new HashSet<>(thirdSet);
+        set.removeAll(firstSet);
+        set.removeAll(secondSet);
+
+        set.addAll(intersection);
+
+        return set;
     }
 }
